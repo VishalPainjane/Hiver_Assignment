@@ -2,13 +2,6 @@
 __pycache__/
 .pytest_cache/
 *.py[cod]
-data/raw/
-data/processed/
-data/golden/
+data/twcs.csv
+data/processed/apple_cases.jsonl
 outputs/
-
-data/golden/*
-!data/golden/judge_calibration.json
-outputs/*
-!outputs/llm_intent_cache.json
-!outputs/metrics/
