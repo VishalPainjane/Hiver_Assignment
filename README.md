@@ -1,12 +1,12 @@
 # Hiver Decision Engine — @AppleSupport CX Automation
 
-[![CI](https://github.com/VishalPainjane/Hiver_Assignment/actions/workflows/ci.yml/badge.svg)](https://github.com/VishalPainjane/Hiver_Assignment/actions/workflows/ci.yml)
-[![Docker Ready](https://img.shields.io/badge/Docker-Compose_Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
-[![FastAPI Microservice](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![PyTorch 2.6](https://img.shields.io/badge/PyTorch-2.6.0-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org)
-[![HuggingFace SetFit](https://img.shields.io/badge/HuggingFace-SetFit-FFD21E?logo=huggingface&logoColor=black)](https://github.com/huggingface/setfit)
-[![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-Interactive_Docs-85EA2D?logo=swagger&logoColor=black)](http://localhost:8000/docs)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/VishalPainjane/Hiver_Assignment/actions/workflows/ci.yml/badge.svg?style=flat-square)](https://github.com/VishalPainjane/Hiver_Assignment/actions/workflows/ci.yml)
+[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=flat-square&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.6.0-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)](https://pytorch.org)
+[![SetFit](https://img.shields.io/badge/SetFit-Few--Shot_NLU-1f2937?style=flat-square)](https://github.com/huggingface/setfit)
+[![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-475569?style=flat-square)](http://localhost:8000/docs)
+[![License](https://img.shields.io/badge/License-MIT-334155?style=flat-square)](https://opensource.org/licenses/MIT)
 
 An enterprise-grade, offline-capable AI decision engine for **@AppleSupport** that transforms incoming customer support tweets into structured **intents**, retrieves verified historical twin precedents, executes deterministic safety filtering, and generates brand-compliant reply drafts under Apple's 4 Golden Rules.
 
@@ -18,26 +18,26 @@ Evaluated on the Kaggle **Customer Support on Twitter** dataset (`twcs.csv`), po
 
 ```mermaid
 flowchart TD
-    A["📨 Inbound Customer Tweet<br/><i>(e.g., '@AppleSupport battery dies in 2 hrs')</i>"] --> B{"🚨 Stage 1: Two-Stage Safety Gate"}
+    A["Inbound Customer Query<br/><code>@AppleSupport tweet thread</code>"] --> B{"Stage 1: Safety Hazard Gate"}
     
-    B -->|"Thermal/Hardware Hazard (Smoke/Sparks)"| C["🛑 Immediate HANDOFF (Priority P1)<br/><i>Escalate to Senior Safety Team</i>"]
-    B -->|"Safe / Colloquial Slang Cleared"| D["⚡ Stage 2: Few-Shot SetFit NLU<br/><i>(all-MiniLM-L6-v2 on GPU ~12.1ms)</i>"]
+    B -->|"Thermal/Hardware Hazard"| C["Immediate Escalation<br/><code>HANDOFF (Priority P1)</code>"]
+    B -->|"Cleared (Slang/Safe)"| D["Stage 2: Few-Shot SetFit NLU<br/><code>all-MiniLM-L6-v2 (~12.1ms)</code>"]
     
-    D --> E["📊 Calibrated Output<br/><i>Probabilities + Shannon Entropy + Ambiguity Check</i>"]
+    D --> E["Calibrated Uncertainty Estimation<br/><code>Softmax Probs + Shannon Entropy</code>"]
     
-    E --> F["🔍 Stage 3: Playbook Precedent RAG<br/><i>(24,848 Historical @AppleSupport Resolution Pairs)</i>"]
+    E --> F["Stage 3: Precedent Playbook RAG<br/><code>24,848 Historical Twin Pairs</code>"]
     
-    F --> G{"⚖️ Stage 4: Deterministic 3-Tier Routing"}
+    F --> G{"Stage 4: Deterministic Routing Engine"}
     
-    G -->|"Confidence ≥ 0.80 & Precedent Match"| H["🤖 AUTO_REPLY<br/><i>Automated Routine Triage</i>"]
-    G -->|"Confidence < 0.80 or Ambiguous"| I["👥 ASSISTED_REPLY<br/><i>Human-in-the-Loop Review Queue</i>"]
-    G -->|"Billing / Out of Scope"| J["👨‍💼 HANDOFF<br/><i>Senior Specialist Escalation</i>"]
+    G -->|"Confidence >= 0.80 & Grounded"| H["AUTO_REPLY<br/><code>Routine Diagnostic Flow</code>"]
+    G -->|"Confidence < 0.80 or Ambiguous"| I["ASSISTED_REPLY<br/><code>Human-in-the-Loop Queue</code>"]
+    G -->|"Billing / Out-of-Scope"| J["HANDOFF<br/><code>Specialist Escalation</code>"]
     
-    H --> K["🛡️ Stage 5: Apple 4 Golden Rules Guardrails<br/><i>Diagnostic Probe | DM Pivot | Zero Liability | 240-Char Cap</i>"]
+    H --> K["Stage 5: Brand Compliance Guardrails<br/><code>Apple 4 Golden Rules & Redaction</code>"]
     
-    K --> L["⚡ Stage 6: Sub-5ms Twin Failsafe<br/><i>Zero-Downtime Deterministic Fallback</i>"]
+    K --> L["Stage 6: Precedent Template Failsafe<br/><code>Zero-Downtime Sub-5ms Fallback</code>"]
     
-    L --> M["✅ Final Brand-Compliant Reply Draft"]
+    L --> M["Brand-Compliant Reply Output"]
 ```
 
 - **Data Source**: 131,764 real customer support interactions from the Kaggle Customer Support on Twitter (`twcs.csv`) dataset.
@@ -210,5 +210,5 @@ Hiver_Assignment/
 
 For complete mathematical proofs, class confusion matrices, qualitative failure mode case studies, and enterprise ROI modeling, see:
 
-- 📄 **[Comprehensive Baseline Benchmarking Report](docs/REPORT.md)**
-- 📊 **[Data Engineering Documentation](data/README.md)**
+- **[Comprehensive Baseline Benchmarking Report](docs/REPORT.md)**
+- **[Data Engineering Documentation](data/README.md)**
