@@ -363,7 +363,6 @@ class BenchmarkSuite:
         sample_replies = []
         eval_scores = []
         for c in self.golden_cases:
-        for c in self.golden_cases[:3]:
             txt = c["case"]["clean_text"]
             rep = generator.generate_reply(txt, handle="@user")
             score = GenerationQualityEvaluator.evaluate(txt, rep)
@@ -374,10 +373,6 @@ class BenchmarkSuite:
                     "reply": rep,
                     "score": score.overall,
                 })
-            sample_replies.append({
-                "query": txt,
-                "reply": rep,
-            })
 
         mean_diag = float(np.mean([s.diagnostic_probe for s in eval_scores]))
         mean_priv = float(np.mean([s.privacy_pivot for s in eval_scores]))
@@ -448,7 +443,6 @@ class BenchmarkSuite:
         sample_replies = []
         eval_scores = []
         for i, c in enumerate(self.golden_cases):
-        for c in self.golden_cases[:3]:
             txt = c["case"]["clean_text"]
             rep = generator.generate_reply(txt, handle="@user")
             score = GenerationQualityEvaluator.evaluate(txt, rep)
@@ -459,10 +453,6 @@ class BenchmarkSuite:
                     "reply": rep,
                     "score": score.overall,
                 })
-            sample_replies.append({
-                "query": txt,
-                "reply": rep,
-            })
 
         mean_diag = float(np.mean([s.diagnostic_probe for s in eval_scores]))
         mean_priv = float(np.mean([s.privacy_pivot for s in eval_scores]))
@@ -528,7 +518,6 @@ class BenchmarkSuite:
         sample_replies = []
         eval_scores = []
         for i, c in enumerate(self.golden_cases):
-        for i, c in enumerate(self.golden_cases[:3]):
             txt = c["case"]["clean_text"]
             # Fast deterministic route using playbook twin & safety filter
             safety = engine.safety_filter.evaluate(txt)
@@ -536,7 +525,6 @@ class BenchmarkSuite:
                 rep = None
                 score = QualityScore(5.0, 5.0, 5.0, 5.0, 5.0, 5.0)  # Perfect suppression of hazards
             else:
-            if not safety.is_hazard:
                 intent_name = preds[i]
                 retrieval = engine.retriever.retrieve(txt, intent=intent_name, top_k=2)
                 rep = engine._apply_failsafe(retrieval.best_template, handle="@user")
