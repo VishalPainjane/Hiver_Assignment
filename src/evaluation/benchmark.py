@@ -180,6 +180,7 @@ class SimpleZeroShotGenerator:
 
 # =====================================================================
 # 3. GENERATION QUALITY RUBRIC (Multi-Dimensional 1.0 - 5.0 Scale)
+# 3. BENCHMARK RUNNER & COMPARATOR
 # =====================================================================
 
 @dataclass
@@ -358,9 +359,11 @@ class BenchmarkSuite:
         recall = recall_score(self.golden_labels, preds, average="macro", zero_division=0)
 
         # Generation Quality Evaluation
+        # Sample Replies
         sample_replies = []
         eval_scores = []
         for c in self.golden_cases:
+        for c in self.golden_cases[:3]:
             txt = c["case"]["clean_text"]
             rep = generator.generate_reply(txt, handle="@user")
             score = GenerationQualityEvaluator.evaluate(txt, rep)
@@ -371,6 +374,10 @@ class BenchmarkSuite:
                     "reply": rep,
                     "score": score.overall,
                 })
+            sample_replies.append({
+                "query": txt,
+                "reply": rep,
+            })
 
         mean_diag = float(np.mean([s.diagnostic_probe for s in eval_scores]))
         mean_priv = float(np.mean([s.privacy_pivot for s in eval_scores]))
@@ -437,9 +444,11 @@ class BenchmarkSuite:
         recall = recall_score(self.golden_labels, preds, average="macro", zero_division=0)
 
         # Generation Quality Evaluation
+        # Sample Replies
         sample_replies = []
         eval_scores = []
         for i, c in enumerate(self.golden_cases):
+        for c in self.golden_cases[:3]:
             txt = c["case"]["clean_text"]
             rep = generator.generate_reply(txt, handle="@user")
             score = GenerationQualityEvaluator.evaluate(txt, rep)
@@ -450,6 +459,10 @@ class BenchmarkSuite:
                     "reply": rep,
                     "score": score.overall,
                 })
+            sample_replies.append({
+                "query": txt,
+                "reply": rep,
+            })
 
         mean_diag = float(np.mean([s.diagnostic_probe for s in eval_scores]))
         mean_priv = float(np.mean([s.privacy_pivot for s in eval_scores]))
@@ -511,9 +524,11 @@ class BenchmarkSuite:
         recall = recall_score(self.golden_labels, preds, average="macro", zero_division=0)
 
         # Generation Quality on Golden Set
+        # Sample Replies on Golden Set
         sample_replies = []
         eval_scores = []
         for i, c in enumerate(self.golden_cases):
+        for i, c in enumerate(self.golden_cases[:3]):
             txt = c["case"]["clean_text"]
             # Fast deterministic route using playbook twin & safety filter
             safety = engine.safety_filter.evaluate(txt)
@@ -521,6 +536,7 @@ class BenchmarkSuite:
                 rep = None
                 score = QualityScore(5.0, 5.0, 5.0, 5.0, 5.0, 5.0)  # Perfect suppression of hazards
             else:
+            if not safety.is_hazard:
                 intent_name = preds[i]
                 retrieval = engine.retriever.retrieve(txt, intent=intent_name, top_k=2)
                 rep = engine._apply_failsafe(retrieval.best_template, handle="@user")
@@ -575,20 +591,26 @@ class BenchmarkSuite:
 
     def _print_comparison_table(self, results: List[ModelBenchmarkResult]) -> None:
         print("\n" + "=" * 95)
+        print("\n" + "=" * 90)
         print("HIVER BENCHMARK COMPARISON TABLE (200 Hand-Labeled Golden Cases)")
         print("=" * 95)
         header = f"{'Model Architecture':<48} | {'Accuracy':<10} | {'Macro-F1':<10} | {'Gen Quality':<12} | {'Latency':<10}"
+        print("=" * 90)
+        header = f"{'Model Architecture':<52} | {'Accuracy':<10} | {'Macro-F1':<10} | {'Latency':<12}"
         print(header)
         print("-" * len(header))
         for r in results:
             print(
                 f"{r.name:<48} | "
+                f"{r.name:<52} | "
                 f"{r.classification_accuracy:>8.1f}% | "
                 f"{r.macro_f1:>10.4f} | "
                 f"{r.generation_quality:>7.1f} / 5.0 | "
                 f"{r.avg_latency_ms:>7.2f} ms"
+                f"{r.avg_latency_ms:>9.2f} ms"
             )
         print("=" * 95 + "\n")
+        print("=" * 90 + "\n")
 
     def _save_results(self, results: List[ModelBenchmarkResult]) -> None:
         out_dir = Path("outputs")
