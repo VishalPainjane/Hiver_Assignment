@@ -1,0 +1,722 @@
+[
+  {
+    "text": "@AppleSupport Yes. I have reset my password however it will not let me gain access without my security question answers which I cannot remember",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@115858 sOS update 1.0. Why the hell does my phone die every 3 mins since your last iOS update?",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport It's locked. It starts up &amp; this shows up..before it used to ask iCloud username &amp; password. Could I DM you the IMEI info @AppleSupport https://t.co/670ffQCImM",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport They can\u2019t assist me. Can you confirm and then open a Radar ticket so it can be fixed in the next dev sprint for iOS 11.1?",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport all of them, i cannot download anything): \ud83d\ude2d\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport Hi, my iPhone 6S shut itself off this morning and hasn't come back on since. I've tried restarting it but nothing's happening",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport So I update my phone yesterday and the touch screen isn\u2019t working properly, I\u2019ve restarted it numerous times and it\u2019s still not ok \u2639\ufe0f",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport if this issue can be fixed soon that'll be great cos if not i'll cancel my subscription !!!!",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@115858 upgraded to latest update last night. Battery drained 15% within 5 mins of looking at news! #batterydrain #applepleasefix #help",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport hi version 10.3.3 and I have tried starting and restarting et cetera but it hasn't worked.... thanks for prompt reply!",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@11164 help Super Tech Support! Why won't @115858 ID 2-factor auth work? I can get code after code, no \"match\", now locked out! \ud83d\ude2b",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "The new iOS update has fucked my phone. Slow, nothing loads, everything crashes. @AppleSupport - sort it out",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Ok.. is there anyway to recover a locked account other than the trusted phone number? I have no clue what I set it as 8 years ago",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "My phone battery is getting down to 10% from 100% within an hour and this started after the IOS 11 upgradation..Help @AppleSupport @115858",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@309741 @AppleSupport Charged it over night and I\u2019m down to 43%, all I\u2019ve done is listen to some music and send a few tweets! WTF?!?",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "Hey @116333 Why did you release #ios11 with so many bugs? I love #iphone and #iOS but this is the worst iOS update yet. We deserve better. https://t.co/w83ZuJX78m",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Yes. I have restarted it multiple times and the same thing keeps happening. Here\u2019s another example of it. Just trying to do my homework :( https://t.co/Y57HmHWUOu",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@196048 @115858 Ohhhh ok I thought I was tripping! The player from the locked screen doesn\u2019t work. I can\u2019t add songs to my library! just fckery \ud83d\ude12",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "The latest iPhone software updates (iOS11 &amp; 11.0.1) definitely draining the battery faster than before. Phone never lasts a day now. https://t.co/PEzFnormUF",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport Is there any way to get a refund for the three months' subscription I've paid since the iPad has been out of use? (2/2)",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport how can I\ufe0f upgrade? My phone is restarting randomly and I\ufe0f cannot lock my phone. I\ufe0f have to hold the power button and home button. This is happening 3x\u2019s a day. My phone also turns off when im on FaceTime.",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport Got it. But what about other subscription? Should my setting have that MANAGE SUBSCRIPTION button?",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport Hi, my iphone keeps restarting every minute or so. What should I do? :(",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport iPhone 6s, however I rebooted my phone &amp; it\u2019s back 2 normal now. Thanx 4 replying though",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport There is no way to recover iTunes account's password. How can I change that account for another one??",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport I requested a password change for my Apple ID a week ago. Still no instructions on what my next step is.",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "Sitting with my iPhone plugged into the charger and its battery is slowly going down. Great logic there @115858",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport iPhone 7 &amp; iOS 11.0.2",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport dont hav solution 2 recover Apple id password. I'm struggling since last 3months. Even though giving proof of device ownership",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "My Mac restarted and deleted the 8 pages of homework I was working on so I'm just gonna make a plan to systematically destroy @115858 now",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "My phone was at 100%, then went to 1%, then I charged it and it instantly went to 58%. @AppleSupport explain?? Lmao",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "The new @115858 IOS update has deleted all of my @115948 \ud83d\ude29\ud83d\ude29",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "Hello @AppleSupport I have an issue unlocking my Apple ID , can't remember two of my security questions and the email method is not working",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@115858 @AppleSupport my phone start freezing 10 times a day and then restarting itself! Wtf is up Apple? iOS 11.01 is so frustrating!",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport Can\u2019t get to the force quit menu, can\u2019t switch apps, can\u2019t get to the login screen. The only recourse is to hold power button down.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport Hi, why am I being charged by iTunes without being notified? Please explain why https://t.co/FFQWcQdGIA",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport Hi, so I have several billing issues with Apple Music. 1. It's billing me in pounds not dollars. Isn't that theft?",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "Dear @AppleSupport @115858 I can't seem to update my billing info. Please assist",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport Just like that https://t.co/WZ6rbTKOwY",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@115858 how do u cancel subscriptions that come out every month x",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport it still isn't working :'( has me locked out for too many attempts v frustrated just want to be able to use my phone",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "I have charged my phone to 100% 4 times today @115858 wtf is going on.",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport HOW CAN RECOVER A PASSWORD THAT HAS BEEN FORGOTTEN FOR 6 YEARS FROM A 3GS IPHONE PLS HALP",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport you need a new version of ios 11 i can\u2019t call people anymore",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport where is the \u2018cancel\u2019 option for subscriptions in the new App Store design? It was already buried. Now I\u2019m lost.",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport Why is battery life dropping with iOS 11? Read the Twitter news. Everyone is complaining!! Fix it!!",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "Great! Did the latest iOS update and now can\u2019t hear any videos on any app! Not impressed @AppleSupport",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport why is the top info bar locked in now? It shows when videos are playing and blocks link to toggle back to previous app.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "This IOS 11.0.2 update is trash. @AppleSupport @115858 get it together! Phone has been freezing all day, apps tripping. I\u2019m livid. https://t.co/RhSUtLZu6l",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport he new IOS update has been sluggish. Will it be fixed soon?",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport figured out i could hold sleep/wake button and side volume button to bypass the slide to restart. thank god im a genius,",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "Heeeey my battery went from 20 to 10% in just 3 minutos and screen locked... This beta version s*cks &gt;.&lt; @AppleSupport",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport none of my photos show in the photos app anymore",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "After update # ios1102 battery is a disaster! In 20 min 2% loss. @AppleSupport that is underground.",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "it\u2019s been 20 minutes and my phone hasn\u2019t charged past 10%. IM SUING @115858",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport background picture with passcode screen over it. https://t.co/Rinxrm0MTS",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "I have had 2 @115858 iPhone chargers catch fire this month and 1 was while my 10yo was charging her iPod! We need better cords @115858!!",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport The newest iOS &amp; yes I\u2019ve restarted my phone. Same issues.",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport All apps up to date. Also just updated to iOS 11.0.2 and will give it a go again tomorrow.",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@115858, why can\u2019t I use Apple Pay to update my iCloud billing...? @AppleSupport @118936 https://t.co/YZK99E7m33",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "Just restored my iPhone to my latest iCloud backup after @126 removed the ability to hide comments on LIVE videos. \ud83e\udd26\ud83c\udffd\u200d\u2640\ufe0f",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport When I try to delete a photo it doesn\u2019t delete and when I try to send a picture to someone for the app it freezes",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport Your systems status says iCloud is up, but I'm trying to restore phone from iCloud backup and I'm unable to connect to iCloud (on WiFi or on cell data). Also unable to login to https://t.co/9xBSntxtDH on computer. Error msgs say issue connecting to iCloud servers.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@115858 any idea when you\u2019ll fix the 11.0.2 update? I have had to completely shut my phone down multiple times because it locked up!",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Yes I restarted and that fixed it.",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport I didn\u2019t change my payment information so I can\u2019t understand what is the problem! I pay my \u20ac0.99 subscription for years now. https://t.co/tlZHVDRtzq",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "yo @115858 why should i make a payment for a free app on appstore?? fix this please",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport my Apple Music payment charged a day early and I needed that money on my account, is there any way to reverse it?",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "I just updated my iPhone 6S to iOS 11 and it messed up my phone. Reverted it back to as if it were my 5S. @AppleSupport Help?",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@118936 @118721 @115858 give me my refund or I\u2019m switching to android https://t.co/lLU41mdCrC",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "yo @115858 I just bought ya iPhone 7 just like 2 weeks ago and the battery already dies quicker than @4870 dog taking a fat shit, instead of not having a headphone jack, make a better battery, period",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "My phone shuts down even when fully charged @AppleSupport",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "Hey @AppleSupport @115858 is there a reason ALL of my notifications disappear when I try to preview/view/clear only one??? I need this fixed ASAP bc #BTSxAMAs is going to light my notifs on fire https://t.co/lMh55spDqU",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "#ios11 is just killing my phone, it says I have service but I can\u2019t get out, have to restart multiple times @AppleSupport",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "My iPhone 7 Plus is the previous generation device. #iOS11 manages to nuke its battery in just under half a day. #epicsoftwarefail @115858",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "Why does my apple iCloud account not log in? I\u2019ve literally done everything I could think of? Requested recovery but nothing? @AppleSupport",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "hey @118936 you and @AppleSupport need to help me figure out how to get a refund on a purchase i didn\u2019t want to make, but touch id forced.",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport the iOS update makes some of apps a bit slower! Fix the bugs please!",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Trying reset with trusted phone number about 30-40 times changes password done everything being told now lose it its 2:15am doing this for last five hours",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport some are taken thru my phone others are screenshots",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport It\u2019s whenever my phone is on charge for longer than a couple of hours!? Also all my iCloud photos have disappeared. How do I get them back?",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "Dear @AppleSupport #iOS11 is hogging on the battery like there's no tomorrow",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "Can I get a refund for my brand new iPhone 7 that decided to just stop working after this update? Would be greatly appreciated. @115858",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport hey I am getting issues with iOS 11.0.1 can\u2019t share pdf, battery is getting drained very fast",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "Dear @115858 your flagship iPhone 8 on the newest OS is buggy as hell. Please fix. I\u2019m tired of restarting my phone to fix small OS hiccups.",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport restart does not help. If I try on cellular I get an error \u201cverification failed. There was a problem connecting to the server\u201d https://t.co/ahjiblDUNg",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport It\u2019s an iPhone 6S and it\u2019s on the notification. It is only seen the iOS update",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "Why my phone keep crashing while I'm doing the most basic shit @115858 This will probably be my last iPhone ever",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "i literally got a brand new iphone &amp;it wont let me set up and it keeps saying that there is an an error with apple ID or it just wont work",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@115858 : iOS 11 Phone SLOWER than ever, Charging battery: 3 hours &amp; it lasts 1!!!! , iOS 11.0.2 is not enough to fix all of this!",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport hi my 8plus on 10.0.3 has abysmal battery life.",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport -Sending new unopened unlocked iphone 8 back if no fix for battery drain issue on ios11. 6S plus drains 10% in 10 minutes!",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@115858 You guys any closer to sorting out the battery draining issues with ios11? It\u2019s killing my phone within a few hours.",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@115858 after careful consideration I have come to the conclusion that the iOS update sucks. Slow response, poor performance Can i roll back?",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@115858 my mom reset the password to many times and now we can\u2019t use her phone,we sent a recovery can you help us?",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport pressed the link for 3 months free trail. Already charged me???",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport just updated my MacOS to the high Sierra....this is what happened after update/restart...it's stuck in a loop https://t.co/o6kWVnQyf6",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport Iphone 6s. and i have ios 11.0.1 i believe.",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport IOS 11.0.2 the lastest version available!",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport I have live photos disabled and preserved off in Camera Settings. But when taking a photo within an imessage convo, it's always a Live Photo https://t.co/mJOyjPAFq7",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport can you un-update my phone? thanks!",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport I was charged for a subscription that I ended and y\u2019all owe me $15.",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport what\u2019s up my phones battery the last up date was not good",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport Also it said I need to sign in on that page it sends me to and I have until November 2 to cancel it. Does that make sense?",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport the app is free does this change things and on itunes when i try and sign in to my account it said that your server is down",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport Sorry. I hard restart? Held down button on right and down volume button",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport As if you\u2019re going to actually do anything.... have a 5s and it\u2019s rubbish now.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "\u2b07\ufe0f my iPhone \ud83d\udcf1 battery \ud83d\udd0b drains quickly after iOS 11 update ugh \ud83d\ude11 @AppleSupport FYI \ud83e\udd26\ud83c\udffb\u200d\u2640\ufe0f\ud83d\ude2d\ud83d\ude2d\ud83d\ude2d https://t.co/m0C6MIgLXo",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@115858 I was charged over $500 for a subscription that I never signed up for, and you won't refund me. You don't need to rip people off...",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@AppleSupport @298578 I\u2019ve sent them a dm but mine wouldn\u2019t let me sign in had to do factory reset and battery life is now poor",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "Do i really have to wait 13 days 'till I can change my apple id password? @applesupport",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport what password is this referring to? It will not accept my iCloud, computer, or phone password https://t.co/tcZVKRuynn",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport As you stated it\u2019s not your department and I respect that. Thank you, anyway. Calling lawyer. Paid for a computer I never received.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport Thanks for answering. I\u2019ve noticed that it became more often after the iOS update. Could this be related somehow?",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport why does my iPhone 8 plus just randomly restart every couple of days?",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": ". @115858 my favorite feature of the #iOS11 update is when my phone randomly restarts. That\u2019s not inconvenient at all!",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport Confirmed. Maybe because I keep adding the robocall numbers to existing contact \u201cIllegal Spammer\u201d that, contact is blocked, now with 20 phone numbers?",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport hello I\u2019ve been charged twice for my LinkedIn subscription. Is there any way into get a refund for accessa mount charged?",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "My macbook pro battery has fully stopped working overnight... it is a 2015... is this typical? @115858 @AppleSupport #MacBookPro",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "Hey @115858 fix your software I have to restart my phone 50x a day cause it\u2019s constantly freezing. Wtf!?",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport It happens when I don\u2019t have notifications on the lock screen. It happened this evening for the first time. Restarting did help!",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@AppleSupport Have not done a temp network for many years. The password option may have disappeared years ago. No password makes it too insecure to use.",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport My phone got stolen &amp; these scammer people made a fake login to https://t.co/XGH0mSIJq1. Want to DM? Would luv 2 shut m down.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport Restarting resolved both problems. Thank you \ud83d\ude42",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "This new iOS update stinks. Soooo many problems!",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Hi, I\u2019d like to buy an app with my balance but keep getting asked for valid payment method. PayPal is no longer available.",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport and while taking on the call with someone else, also using application too, I don\u2019t go back to the calling screen and turn off the call when I finish talking. I just use my earphone or some other options to quit the call. But, when I quit the call with showing up the other",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "I love that since I updated to the new iOS that my battery lasts an like an hour. Especially after replacing the battery weeks ago @115858",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@115858 I was charged for a subscription that I canceled the same day I accepted the free trails why was I charged?",
+    "label": 2,
+    "intent": "BILLING_DISPUTE"
+  },
+  {
+    "text": "@163000 @162999 @AppleSupport My 6 is definitely slower. Others have reported shorter battery life. It\u2019s almost as though they\u2019re programmed to fail after a time....",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport I tried many method such as reset password, but I don't have access to the hotmail account, because it's old. Microsoft isn't helping either",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport Or it says could not sign in",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "This is a screenshot of my home screen @115858 help please https://t.co/s976aGgBIL",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport the new ios11 has effectively ruined any reliability in performance. at any given moment i can expect my phone to freeze and",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Need help resetting my daughters AppleID password. HELP!",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "What the eff is happening to my iPhone? Battery drains hella fast since iOS 11.1 update! @115858",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@115858 I don\u2019t like this new iOS 11 update. I want to switch back to last one, please.",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "Yo @AppleSupport can y\u2019all call me or something because my iPhone just deleted my Apple ID and won\u2019t let me sign in now.",
+    "label": 0,
+    "intent": "ACCOUNT_ACCESS"
+  },
+  {
+    "text": "@AppleSupport IOS 11.1.1 - sometimes the app remains like I\u2019m holding it. Earlier everything was unresponsive and I had to restart. Contacts were frozen earlier or slow to respond too.",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  },
+  {
+    "text": "@115858 since updating why does my battery go down quick?and will my photos be deleted off iCloud if I turn it off?",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@AppleSupport can you fix iOS 11 when I do stuff on it my battery just dies every 10 minutes",
+    "label": 1,
+    "intent": "BATTERY_DRAIN"
+  },
+  {
+    "text": "@115858 What about issues on my iPhone6plus since last update+fixes Very slow Search in notes not working Activity/Apple Watch has serious issues",
+    "label": 5,
+    "intent": "UPDATE_FAILURE"
+  },
+  {
+    "text": "@AppleSupport Yes, even wen I connect my iPhone to a Hotspot of another device of mine...still same issue",
+    "label": 4,
+    "intent": "UNKNOWN"
+  },
+  {
+    "text": "@AppleSupport My locked screen goes blank at least 5 times a day, have to restart my phone, it glitches and freezes.",
+    "label": 3,
+    "intent": "DEVICE_BOOT"
+  }
+]
