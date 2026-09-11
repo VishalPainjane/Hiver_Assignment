@@ -1,0 +1,16 @@
+﻿.git
+.github
+.gitignore
+.env
+.env.example
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+data/processed
+data/raw
+models/checkpoints*
+outputs/
+tests/
+*.log
