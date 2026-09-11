@@ -1,9 +1,11 @@
 # Hiver Decision Engine — @AppleSupport CX Automation
 
-[![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![NVIDIA GPU](https://img.shields.io/badge/GPU-RTX_4050-green.svg)](https://developer.nvidia.com/cuda-zone)
-[![PyTorch 2.6](https://img.shields.io/badge/PyTorch-2.6.0+cu124-red.svg)](https://pytorch.org)
-[![FastAPI Microservice](https://img.shields.io/badge/FastAPI-0.115+-teal.svg)](https://fastapi.tiangolo.com)
+[![CI](https://github.com/VishalPainjane/Hiver_Assignment/actions/workflows/ci.yml/badge.svg)](https://github.com/VishalPainjane/Hiver_Assignment/actions/workflows/ci.yml)
+[![Docker Ready](https://img.shields.io/badge/Docker-Compose_Ready-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
+[![FastAPI Microservice](https://img.shields.io/badge/FastAPI-0.115+-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![PyTorch 2.6](https://img.shields.io/badge/PyTorch-2.6.0-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org)
+[![HuggingFace SetFit](https://img.shields.io/badge/HuggingFace-SetFit-FFD21E?logo=huggingface&logoColor=black)](https://github.com/huggingface/setfit)
+[![OpenAPI 3.1](https://img.shields.io/badge/OpenAPI-Interactive_Docs-85EA2D?logo=swagger&logoColor=black)](http://localhost:8000/docs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An enterprise-grade, offline-capable AI decision engine for **@AppleSupport** that transforms incoming customer support tweets into structured **intents**, retrieves verified historical twin precedents, executes deterministic safety filtering, and generates brand-compliant reply drafts under Apple's 4 Golden Rules.
@@ -14,18 +16,28 @@ Evaluated on the Kaggle **Customer Support on Twitter** dataset (`twcs.csv`), po
 
 ## 1. Executive Summary & Pipeline Architecture
 
-```
-+---------------------------------------------------------------------------------------------------+
-|                                PRODUCTION DECISION & ROUTING PIPELINE                             |
-+---------------------------------------------------------------------------------------------------+
-| 1. Incoming Customer Tweet                                                                        |
-|    └─► 2. Two-Stage Safety Gate (Immediate HANDOFF Priority P1 on sparks/smoke/swelling)          |
-|          └─► 3. Few-Shot SetFit NLU on RTX 4050 GPU (~12.1ms, Calibrated Probabilities + Entropy)  |
-|                └─► 4. Intent-Partitioned Precedent Retrieval (24,848 Cleaned Apple Playbook Pairs) |
-|                      └─► 5. Deterministic 3-Tier Routing (AUTO_REPLY | ASSISTED_REPLY | HANDOFF)   |
-|                            └─► 6. Guarded Generation (Diagnostic Probe, DM Pivot, Brevity Shield) |
-|                                  └─► 7. Sub-5ms Historical Twin Failsafe (Zero-Downtime Fallback)  |
-+---------------------------------------------------------------------------------------------------+
+```mermaid
+flowchart TD
+    A["📨 Inbound Customer Tweet<br/><i>(e.g., '@AppleSupport battery dies in 2 hrs')</i>"] --> B{"🚨 Stage 1: Two-Stage Safety Gate"}
+    
+    B -->|"Thermal/Hardware Hazard (Smoke/Sparks)"| C["🛑 Immediate HANDOFF (Priority P1)<br/><i>Escalate to Senior Safety Team</i>"]
+    B -->|"Safe / Colloquial Slang Cleared"| D["⚡ Stage 2: Few-Shot SetFit NLU<br/><i>(all-MiniLM-L6-v2 on GPU ~12.1ms)</i>"]
+    
+    D --> E["📊 Calibrated Output<br/><i>Probabilities + Shannon Entropy + Ambiguity Check</i>"]
+    
+    E --> F["🔍 Stage 3: Playbook Precedent RAG<br/><i>(24,848 Historical @AppleSupport Resolution Pairs)</i>"]
+    
+    F --> G{"⚖️ Stage 4: Deterministic 3-Tier Routing"}
+    
+    G -->|"Confidence ≥ 0.80 & Precedent Match"| H["🤖 AUTO_REPLY<br/><i>Automated Routine Triage</i>"]
+    G -->|"Confidence < 0.80 or Ambiguous"| I["👥 ASSISTED_REPLY<br/><i>Human-in-the-Loop Review Queue</i>"]
+    G -->|"Billing / Out of Scope"| J["👨‍💼 HANDOFF<br/><i>Senior Specialist Escalation</i>"]
+    
+    H --> K["🛡️ Stage 5: Apple 4 Golden Rules Guardrails<br/><i>Diagnostic Probe | DM Pivot | Zero Liability | 240-Char Cap</i>"]
+    
+    K --> L["⚡ Stage 6: Sub-5ms Twin Failsafe<br/><i>Zero-Downtime Deterministic Fallback</i>"]
+    
+    L --> M["✅ Final Brand-Compliant Reply Draft"]
 ```
 
 - **Data Source**: 131,764 real customer support interactions from the Kaggle Customer Support on Twitter (`twcs.csv`) dataset.
@@ -100,9 +112,29 @@ All metrics below are **empirically computed** from actual test runs. Zero numbe
 
 ---
 
-## 5. One-Command Reproduction (< 30 seconds)
+## 5. Quickstart & Reproduction (< 30 seconds)
 
 All datasets, fine-tuned weights, and precedent vaults are included locally.
+
+### Option A: Docker (One-Command Rollout, Any OS)
+
+```bash
+# Spin up Redis cache and FastAPI microservice
+docker compose up --build
+
+# Interactive OpenAPI Docs available at: http://localhost:8000/docs
+```
+
+### Option B: Makefile Automation
+
+```bash
+make test       # Run 14 automated unit & microservice tests
+make verify     # Run E2E colloquial natural customer query tests
+make bench      # Run 3-architecture baseline comparison on 200 Golden Set
+make up         # Spin up containerized cluster
+```
+
+### Option C: Direct Python Scripts
 
 ```powershell
 # 1. Run the Baselines vs. Production Benchmark (200 Golden Set)
