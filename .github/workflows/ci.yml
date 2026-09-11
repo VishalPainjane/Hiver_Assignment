@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      PYTHONPATH: .
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -26,7 +28,7 @@ jobs:
 
       - name: Verify Code Syntax & Hygiene
         run: |
-          python -m compileall src/ scripts/
+          python -m compileall src/ scripts/ tests/
 
       - name: Run Unit Tests & Rule Gate Validations
         run: |
@@ -34,12 +36,5 @@ jobs:
 
       - name: Test Service Healthz Endpoint
         run: |
-          python -c "
-          from fastapi.testclient import TestClient
-          from src.service.api import app
-          client = TestClient(app)
-          response = client.get('/healthz')
-          assert response.status_code == 200, f'Expected 200, got {response.status_code}'
-          print('Healthz probe passed: 200 OK')
-          "
+          python -c "from fastapi.testclient import TestClient; from src.service.api import app; client = TestClient(app); response = client.get('/healthz'); assert response.status_code == 200, f'Expected 200, got {response.status_code}'; print('Healthz probe passed: 200 OK')"
 

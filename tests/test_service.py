@@ -1,15 +1,67 @@
-﻿"""Automated tests for FastAPI inference microservice, Redis caching, and ambiguity gating."""
+"""Automated tests for FastAPI inference microservice, Redis caching, and ambiguity gating."""
 
 from __future__ import annotations
 
+import numpy as np
 import pytest
 from fastapi.testclient import TestClient
 
-from src.service.api import app
+from src.service.api import app, get_classifier
+
+
+class MockSetFitModel:
+    def __init__(self, labels):
+        self.labels = list(labels)
+
+    def predict_proba(self, texts):
+        probs = []
+        for text in texts:
+            t = text.lower()
+            row = [0.01] * len(self.labels)
+            if "battery" in t or "dies" in t:
+                idx = self.labels.index("BATTERY_DRAIN")
+            elif "billing" in t or "charge" in t or "card" in t or "itunes" in t:
+                idx = self.labels.index("BILLING_DISPUTE")
+            elif "update" in t:
+                idx = self.labels.index("UPDATE_FAILURE")
+            else:
+                idx = self.labels.index("UNKNOWN")
+            row[idx] = 0.95
+            s = sum(row)
+            probs.append([v / s for v in row])
+        return np.array(probs)
+
+
+class MockClassifier:
+    def __init__(self):
+        self.taxonomy = [
+            "ACCOUNT_ACCESS",
+            "BATTERY_DRAIN",
+            "BILLING_DISPUTE",
+            "DEVICE_BOOT",
+            "UNKNOWN",
+            "UPDATE_FAILURE",
+        ]
+        self.device = "cpu"
+        self._model = MockSetFitModel(self.taxonomy)
+
+    def is_loaded(self) -> bool:
+        return True
+
+
+@pytest.fixture(scope="module", autouse=True)
+def setup_classifier():
+    """Ensure an active classifier is available during test runs (e.g. in headless CI)."""
+    classifier = get_classifier()
+    if classifier is None or not classifier.is_loaded() or getattr(classifier, "_model", None) is None:
+        mock_clf = MockClassifier()
+        app.state.classifier = mock_clf
+        app.state.taxonomy = mock_clf.taxonomy
+        app.state.brand_engine = None
 
 
 @pytest.fixture(scope="module")
-def client():
+def client(setup_classifier):
     """Module-scoped FastAPI TestClient with initialized lifespan."""
     with TestClient(app) as test_client:
         yield test_client

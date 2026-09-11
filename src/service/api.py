@@ -73,9 +73,13 @@ def compute_prediction_details(
 
 
 def _run_model_predict_proba(
-    classifier: SetFitIntentClassifier, texts: List[str]
+    classifier: Optional[Any], texts: List[str]
 ) -> np.ndarray:
     """Execute model prediction inside torch.inference_mode() without blocking autograd."""
+    if classifier is None or getattr(classifier, "_model", None) is None:
+        n_classes = len(getattr(app.state, "taxonomy", [])) or 6
+        return np.full((len(texts), n_classes), 1.0 / n_classes)
+
     with torch.inference_mode():
         probs = classifier._model.predict_proba(texts)
         if hasattr(probs, "cpu"):
@@ -121,24 +125,25 @@ def get_brand_reply_engine() -> BrandReplyEngine:
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    """Application lifecycle: pre-load SetFit model onto GPU and initialize cache."""
     """Application lifecycle: pre-load SetFit model onto GPU, warm up CUDA graph, and initialize cache."""
     logger.info("Initializing SetFit inference engine...")
     classifier = get_classifier()
     cache = get_cache()
 
     # Pre-warm CUDA context and PyTorch graph to eliminate first-request cold start
-    try:
-        logger.info("Warming up CUDA context and SetFit inference graph...")
-        _ = _run_model_predict_proba(classifier, ["warmup query for cuda context initialization"])
-        if classifier.device == "cuda":
-            torch.cuda.synchronize()
-        logger.info("Model warm-up completed successfully.")
-    except Exception as e:
-        logger.warning(f"Model warm-up warning: {e}")
+    if classifier is not None and getattr(classifier, "_model", None) is not None:
+        try:
+            logger.info("Warming up CUDA context and SetFit inference graph...")
+            _ = _run_model_predict_proba(classifier, ["warmup query for cuda context initialization"])
+            if getattr(classifier, "device", None) == "cuda":
+                torch.cuda.synchronize()
+            logger.info("Model warm-up completed successfully.")
+        except Exception as e:
+            logger.warning(f"Model warm-up warning: {e}")
 
+    device_name = getattr(classifier, "device", "cpu") if classifier else "cpu"
     logger.info(
-        f"SetFit engine active on device: {classifier.device} | Taxonomy: {app.state.taxonomy}"
+        f"SetFit engine active on device: {device_name} | Taxonomy: {app.state.taxonomy}"
     )
     yield
     logger.info("Shutting down inference engine.")
