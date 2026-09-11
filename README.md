@@ -65,11 +65,6 @@ All metrics below are **empirically computed** from actual test runs. Zero numbe
 | **Baseline 1: Trivial Baseline**<br>_(Majority Guess: UNKNOWN + Canned String)_     | **34.50%** | **0.0855** | **0.1770**  |      0.0575       |     0.1667     |      **4.63 / 5.0**      |              **< 0.01 ms** / < 0.01 ms              |
 | **Baseline 2: Simple Baseline**<br>_(TF-IDF + Logistic Regression + Zero-Shot LLM)_ | **54.50%** | **0.5524** | **0.4457**  |      0.5478       |     0.6860     |      **3.76 / 5.0**      |  **0.84 ms** / 1.29 ms _(Clf)_<br>~850 ms _(LLM)_   |
 | **Proposed Architecture**<br>_(SetFit GPU + Grounded Playbook RAG)_                 | **98.50%** | **0.9827** | **0.9851**  |    **0.9844**     |   **0.9824**   |      **4.11 / 5.0**      | **12.10 ms** / 17.53 ms _(GPU)_<br>< 1 ms _(Cache)_ |
-| Model Architecture                                                                  |  Accuracy  |  Macro-F1  | Weighted-F1 | Precision (Macro) | Recall (Macro) |                 Latency (P50 / P95)                 |
-| :---------------------------------------------------------------------------------- | :--------: | :--------: | :---------: | :---------------: | :------------: | :-------------------------------------------------: |
-| **Baseline 1: Trivial Baseline**<br>_(Majority Guess: UNKNOWN + Canned String)_     | **34.50%** | **0.0855** | **0.1770**  |      0.0575       |     0.1667     |              **< 0.01 ms** / < 0.01 ms              |
-| **Baseline 2: Simple Baseline**<br>_(TF-IDF + Logistic Regression + Zero-Shot LLM)_ | **54.50%** | **0.5524** | **0.4457**  |      0.5478       |     0.6860     |  **0.84 ms** / 1.29 ms _(Clf)_<br>~850 ms _(LLM)_   |
-| **Proposed Architecture**<br>_(SetFit GPU + Grounded Playbook RAG)_                 | **98.50%** | **0.9827** | **0.9851**  |    **0.9844**     |   **0.9824**   | **12.10 ms** / 17.53 ms _(GPU)_<br>< 1 ms _(Cache)_ |
 
 ### 3.2 144 Held-Out Stratified Test Split (100% Balanced, 24 per class)
 
