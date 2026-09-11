@@ -1,4 +1,4 @@
-﻿FROM python:3.11-slim
+FROM python:3.11-slim
 
 # Set system environment variables
 ENV PYTHONUNBUFFERED=1 \
@@ -19,6 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy fine-tuned model artifacts and application code
 COPY models/intent_setfit /app/models/intent_setfit
+COPY data/processed/apple_playbook_vault.json /app/data/processed/apple_playbook_vault.json
 COPY src /app/src
 
 # Healthcheck probe

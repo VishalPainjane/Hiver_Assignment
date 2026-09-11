@@ -1,4 +1,4 @@
-﻿.git
+.git
 .github
 .gitignore
 .env
@@ -8,7 +8,8 @@ __pycache__
 *.pyo
 *.pyd
 .pytest_cache
-data/processed
+data/twcs.csv
+data/processed/apple_cases.jsonl
 data/raw
 models/checkpoints*
 outputs/
