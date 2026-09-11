@@ -4,6 +4,5 @@ __pycache__/
 *.py[cod]
 data/twcs.csv
 data/processed/apple_cases.jsonl
-models/checkpoints/
-models/checkpoints_fold_*/
+models/
 outputs/
